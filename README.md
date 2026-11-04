@@ -2,12 +2,21 @@
 
 Tap do [claudetop](https://github.com/braynemesis/claudetop) — monitor estilo `htop` para agentes do Claude Code.
 
+Comando único:
+
 ```bash
 brew install braynemesis/claudetop/claudetop
 ```
 
-O nome completo já adiciona o tap. No Homebrew 7, o nome curto exige
-`brew trust braynemesis/claudetop` antes.
+Ou pelo nome curto:
+
+```bash
+brew tap braynemesis/claudetop
+brew trust braynemesis/claudetop   # Homebrew 7+
+brew install claudetop
+```
+
+Depois: `brew upgrade claudetop`.
 
 Atualizar:
 
