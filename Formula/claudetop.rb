@@ -1,5 +1,5 @@
 class Claudetop < Formula
-  desc "htop-style monitor for Claude Code agents and subagent swarms"
+  desc "Htop-style monitor for Claude Code agents and subagent swarms"
   homepage "https://github.com/braynemesis/claudetop"
   url "https://github.com/braynemesis/claudetop/archive/refs/tags/v0.1.1.tar.gz"
   sha256 "5ea4f8eb1af1477e14a56cf507c94b40f57281cbdc052f2f6bd3d6aafa6a2ae7"
@@ -9,7 +9,7 @@ class Claudetop < Formula
 
   def install
     libexec.install "claudetop.py"
-    python = Formula["python@3.14"].opt_bin/"python3.14"
+    python = formula_opt_bin("python@3.14")/"python3.14"
     (bin/"claudetop").write <<~SH
       #!/bin/bash
       exec "#{python}" "#{libexec}/claudetop.py" "$@"
