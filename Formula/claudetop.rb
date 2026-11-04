@@ -9,7 +9,7 @@ class Claudetop < Formula
 
   def install
     libexec.install "claudetop.py"
-    python = Formula["python@3.14"].opt_bin/"python3"
+    python = Formula["python@3.14"].opt_bin/"python3.14"
     (bin/"claudetop").write <<~SH
       #!/bin/bash
       exec "#{python}" "#{libexec}/claudetop.py" "$@"
