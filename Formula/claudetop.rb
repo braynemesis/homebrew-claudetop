@@ -17,6 +17,24 @@ class Claudetop < Formula
     chmod 0755, bin/"claudetop"
   end
 
+  def caveats
+    <<~EOS
+      Para abrir o monitor:
+
+        claudetop
+
+      Atalhos:
+        ?  ajuda            /  filtrar
+        1  precisa de mim    s  ordenar
+        o  abrir sessão      l  logs
+        x  parar job         q  sair
+
+      Lê apenas ~/.claude (sem rede) e guarda preferências em ~/.cache/claudetop.
+      Snapshot sem TUI: claudetop --once   |   JSON: claudetop --json
+      Docs: https://github.com/braynemesis/claudetop
+    EOS
+  end
+
   test do
     assert_match "claudetop 0.1.2", shell_output("#{bin}/claudetop --version")
     (testpath/"claude").mkpath
